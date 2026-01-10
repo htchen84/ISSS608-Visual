@@ -1,0 +1,16 @@
+[
+  {
+    "objectID": "Hands-on Exercise/Lesson Plan.html",
+    "href": "Hands-on Exercise/Lesson Plan.html",
+    "title": "Lesson Plan",
+    "section": "",
+    "text": "Overview\n\n\nGetting Started\n\npacman::p_load(tidyverse)\n\n\n\nData"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  }
+]
