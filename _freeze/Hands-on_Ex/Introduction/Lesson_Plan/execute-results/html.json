@@ -1,0 +1,15 @@
+{
+  "hash": "dd78d5df13388cbacb222ef742c8d5e1",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Lesson Plan\"\nauthor: \"Ho_Tung_Chen\"\ndate: \"January 10, 2026\"\ndate-modified: \"last-modified\"\n\nexecute: \n  eval: true\n  echo: true\n  warning: false\n  freeze: true\n---\n\n# Overview\n\nMy first Attempt to create the coursework website\n\n# Getting Started\n\n\n::: {.cell}\n\n```{.r .cell-code}\npacman::p_load(tidyverse)\n```\n:::\n\n\n# Data\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

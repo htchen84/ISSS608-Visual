@@ -7,11 +7,10 @@ website:
     left:
     - text: "Hands-on Exercise"
       menu:
-      - text: "Lesson Plan"
-        href: ""
-      - href: index.qmd
-        text: Home
-      - about.qmd
+      - text: "Introduction"
+        href: "Hands-on_Ex/Introduction/Lesson_Plan.html"
+    - text: "In-class Exercise"
+    - text: "Take-home exercise"
 
 format:
   html:

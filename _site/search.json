@@ -12,5 +12,19 @@
     "title": "About",
     "section": "",
     "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "Hands-on_Ex/Introduction/Lesson_Plan.html",
+    "href": "Hands-on_Ex/Introduction/Lesson_Plan.html",
+    "title": "Lesson Plan",
+    "section": "",
+    "text": "Overview\nMy first Attempt to create the coursework website\n\n\nGetting Started\n\npacman::p_load(tidyverse)\n\n\n\nData"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome to ISSS608-Visual Analytics",
+    "section": "",
+    "text": "This is a Quarto website.\nWelcome to Visual Analytics Coursework"
   }
 ]

@@ -3,6 +3,7 @@ title: "Lesson Plan"
 author: "Ho_Tung_Chen"
 date: "January 10, 2026"
 date-modified: "last-modified"
+
 execute: 
   eval: true
   echo: true
