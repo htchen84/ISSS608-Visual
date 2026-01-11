@@ -2,9 +2,13 @@ project:
   type: website
 
 website:
-  title: "ISSS608-Visual"
+  title: "ISSS608-Visual Analytics"
   navbar:
     left:
+    - text: "Hands-on Exercise"
+      menu:
+      - text: "Lesson Plan"
+        href: ""
       - href: index.qmd
         text: Home
       - about.qmd
