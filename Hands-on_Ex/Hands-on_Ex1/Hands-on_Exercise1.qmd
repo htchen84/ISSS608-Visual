@@ -1,0 +1,368 @@
+---
+title: "Hands-on_Exercise1"
+author: "Ho Tung"
+date: "January 10, 2026"
+date-modified: "last-modified"
+
+format:
+  html:
+    toc-depth: 4
+    toc-expand: true
+
+execute: 
+  eval: true
+  echo: true
+  warning: false
+  freeze: true
+---
+
+# 1.1 Overview
+
+Basic principles and essential components of ggplot2
+
+## **1.2 Getting started**
+
+```{r}
+pacman::p_load(tidyverse)
+```
+
+### **1.2.2 Importing data**
+
+```{r}
+exam_data <- read_csv("data/Exam_data.csv")
+```
+
+## **1.3 Introducing ggplot**
+
+### 1.3.1 R Graphics VS ggplot 
+::: {.panel-tabset}
+
+#### R Graphics
+
+```{r}
+hist(exam_data$MATHS)
+```
+
+#### ggplot
+
+```{r}
+ggplot(data=exam_data, aes(x = MATHS)) +
+  geom_histogram(bins=10, 
+                 boundary = 100,
+                 color="black", 
+                 fill="grey") +
+  ggtitle("Distribution of Maths scores")
+```
+:::
+
+
+## **1.4 Grammar of Graphics**
+
+### **1.4.1 A Layered Grammar of Graphics**
+
+## **1.5 Essential Grammatical Elements in ggplot2: data**
+
+```{r}
+ggplot(data=exam_data)
+```
+
+## **1.6 Essential Grammatical Elements in ggplot2: [Aesthetic mappings](https://ggplot2.tidyverse.org/articles/ggplot2-specs.html)**
+
+```{r}
+ggplot(data=exam_data, 
+       aes(x= MATHS))
+```
+
+## **1.7 Essential Grammatical Elements in ggplot2: geom 1.7.1 Geometric Objects: geom_bar**
+
+```{r}
+ggplot(data=exam_data, 
+       aes(x=RACE)) +
+  geom_bar()
+```
+
+### **1.7.2 Geometric Objects: geom_dotplot**
+
+```{r}
+ggplot(data=exam_data, 
+       aes(x = MATHS)) +
+  geom_dotplot(dotsize = 0.5)
+```
+
+```{r}
+ggplot(data=exam_data, 
+       aes(x = MATHS)) +
+  geom_dotplot(binwidth=2.5,         
+               dotsize = 0.5) +      
+  scale_y_continuous(NULL,           
+                     breaks = NULL)  
+```
+
+### **1.7.3 Geometric Objects: `geom_histogram()`**
+
+```{r}
+ggplot(data=exam_data, 
+       aes(x = MATHS)) +
+  geom_histogram()       
+```
+
+### **1.7.4 Modifying a geometric object by changing `geom()`**
+
+```{r}
+ggplot(data=exam_data, 
+       aes(x= MATHS)) +
+  geom_histogram(bins=20,            
+                 color="black",      
+                 fill="light blue")  
+```
+
+### **1.7.5 Modifying a geometric object by changing *aes()***
+
+```{r}
+ggplot(data=exam_data, 
+       aes(x= MATHS, 
+           fill = GENDER)) +
+  geom_histogram(bins=20, 
+                 color="grey30")
+```
+
+### **1.7.6 Geometric Objects: geom-density()**
+
+```{r}
+ggplot(data=exam_data, 
+       aes(x = MATHS)) +
+  geom_density()           
+```
+
+```{r}
+ggplot(data=exam_data, 
+       aes(x = MATHS, 
+           colour = GENDER)) +
+  geom_density()
+```
+
+### **1.7.7 Geometric Objects: geom_boxplot**
+
+```{r}
+ggplot(data=exam_data,
+       aes(y = MATHS,       
+           x= GENDER)) +    
+  geom_boxplot()             
+```
+
+```{r}
+ggplot(data=exam_data, 
+       aes(y = MATHS, 
+           x= GENDER)) +
+  geom_boxplot(notch=TRUE)
+```
+
+### **1.7.8 Geometric Objects: geom_violin**
+
+```{r}
+ggplot(data=exam_data, 
+       aes(y = MATHS, 
+           x= GENDER)) +
+  geom_violin()
+```
+
+### **1.7.9 Geometric Objects: geom_point()**
+
+[`geom_point()`](https://ggplot2.tidyverse.org/reference/geom_point.html)
+
+```{r}
+ggplot(data=exam_data, 
+       aes(x= MATHS, 
+           y=ENGLISH)) +
+  geom_point()            
+```
+
+### **1.7.10 *geom* objects can be combined**
+
+```{r}
+ggplot(data=exam_data, 
+       aes(y = MATHS, 
+           x= GENDER)) +
+  geom_boxplot() +                    
+  geom_point(position="jitter", 
+             linewidth = 0.5)        
+```
+
+## **1.8 Essential Grammatical Elements in ggplot2: stat**
+
+### **1.8.1 Working with `stat()`**
+
+```{r}
+ggplot(data=exam_data, 
+       aes(y = MATHS, x= GENDER)) +
+  geom_boxplot()
+```
+
+### **1.8.2 Working with stat - the *stat_summary()* method**
+
+### [`stat_summary()`](https://ggplot2.tidyverse.org/reference/stat_summary.html) function
+
+```{r}
+ggplot(data=exam_data, 
+       aes(y = MATHS, x= GENDER)) +
+  geom_boxplot()
+```
+
+### **1.8.2 Working with stat - the *stat_summary()* method** [`stat_summary()`](https://ggplot2.tidyverse.org/reference/stat_summary.html) 
+
+```{r}
+ggplot(data=exam_data, 
+       aes(y = MATHS, x= GENDER)) +
+  geom_boxplot() +
+  stat_summary(geom = "point",       
+               fun = "mean",         
+               colour ="red",        
+               linewidth=4)               
+```
+
+### **1.8.3 Working with stat - the `geom()` method**
+
+```{r}
+ggplot(data=exam_data, 
+       aes(y = MATHS, x= GENDER)) +
+  geom_boxplot() +
+  geom_point(stat="summary",        
+             fun="mean",           
+             colour="red",          
+             linewidth=4)          
+```
+
+### **1.8.4 Adding a best fit curve on a scatterplot?**
+
+[`geom_smooth()`](https://ggplot2.tidyverse.org/reference/geom_smooth.html) 
+
+```{r}
+ggplot(data=exam_data, 
+       aes(x= MATHS, y=ENGLISH)) +
+  geom_point() +
+  geom_smooth(linewidth=0.5)
+```
+
+```{r}
+
+```
+
+```{r}
+ggplot(data=exam_data, 
+       aes(x= MATHS, 
+           y=ENGLISH)) +
+  geom_point() +
+  geom_smooth(method=lm, 
+              linewidth=0.5)
+```
+
+## **1.9 Essential Grammatical Elements in ggplot2: Facets**
+
+[`facet_grid()`](https://ggplot2.tidyverse.org/reference/facet_grid.html) and [`facet_wrap`](https://ggplot2.tidyverse.org/reference/facet_wrap.html)
+
+### **1.9.1 Working with `facet_wrap()`**
+
+```{r}
+ggplot(data=exam_data, 
+       aes(x= MATHS)) +
+  geom_histogram(bins=20) +
+    facet_wrap(~ CLASS)
+```
+
+### **1.9.2 `facet_grid()` function**
+
+```{r}
+ggplot(data=exam_data, 
+       aes(x= MATHS)) +
+  geom_histogram(bins=20) +
+    facet_grid(~ CLASS)
+```
+
+## **1.10 Essential Grammatical Elements in ggplot2: Coordinates**
+
+\- \[\`coord_cartesian()\`\](https://ggplot2.tidyverse.org/reference/coord_cartesian.html): the default cartesian coordinate systems, where you specify x and y values (e.g. allows you to zoom in or out). - \[\`coord_flip()\`\](https://ggplot2.tidyverse.org/reference/coord_flip.html): a cartesian system with the x and y flipped. - \[\`coord_fixed()\`\](https://ggplot2.tidyverse.org/reference/coord_fixed.html): a cartesian system with a "fixed" aspect ratio (e.g. 1.78 for a "widescreen" plot). - \[\`coord_quickmap()\`\](https://ggplot2.tidyverse.org/reference/coord_map.html): a coordinate system that approximates a good aspect ratio for maps.
+
+\
+**1.10.1 Working with Coordinate**
+
+```{r}
+ggplot(data=exam_data, 
+       aes(x=RACE)) +
+  geom_bar()
+```
+
+```{r}
+ggplot(data=exam_data, 
+       aes(x=RACE)) +
+  geom_bar() +
+  coord_flip()
+```
+
+### **1.10.2 Changing the y- and x-axis range**
+
+```{r}
+ggplot(data=exam_data, 
+       aes(x= MATHS, y=ENGLISH)) +
+  geom_point() +
+  geom_smooth(method=lm, linewidth=0.5)
+```
+
+```{r}
+ggplot(data=exam_data, 
+       aes(x= MATHS, y=ENGLISH)) +
+  geom_point() +
+  geom_smooth(method=lm, 
+              linewidth=0.5) +  
+  coord_cartesian(xlim=c(0,100),
+                  ylim=c(0,100))
+```
+
+## **1.11 Essential Grammatical Elements in ggplot2: themes**
+
+### **1.11.1 Working with theme**
+
+```{r}
+ggplot(data=exam_data, 
+       aes(x=RACE)) +
+  geom_bar() +
+  coord_flip() +
+  theme_gray()
+```
+
+```{r}
+ggplot(data=exam_data, 
+       aes(x=RACE)) +
+  geom_bar() +
+  coord_flip() +
+  theme_classic()
+```
+
+```{r}
+ggplot(data=exam_data, 
+       aes(x=RACE)) +
+  geom_bar() +
+  coord_flip() +
+  theme_classic()
+```
+
+```{r}
+ggplot(data=exam_data, 
+       aes(x=RACE)) +
+  geom_bar() +
+  coord_flip() +
+  theme_classic()
+```
+
+## **1.12 Reference**
+
+-   Hadley Wickham (2023) [**ggplot2: Elegant Graphics for Data Analysis**](https://ggplot2-book.org/). Online 3rd edition.
+
+-   Winston Chang (2013) [**R Graphics Cookbook 2nd edition**](https://r-graphics.org/). Online version.
+
+-   Healy, Kieran (2019) [**Data Visualization: A practical introduction**](https://socviz.co/). Online version
+
+-   [Learning ggplot2 on Paper – Components](https://henrywang.nl/learning-ggplot2-on-paper-components/)
+
+-   [Learning ggplot2 on Paper – Layer](https://henrywang.nl/learning-ggplot2-on-paper-layer/)
+
+-   [Learning ggplot2 on Paper – Scale](https://henrywang.nl/tag/learning-ggplot2-on-paper/)
