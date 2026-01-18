@@ -34,9 +34,9 @@ exam_data <- read_csv("data/Exam_data.csv")
 
 ## **1.3 Introducing ggplot**
 
-### 1.3.1 R Graphics VS ggplot 
-::: {.panel-tabset}
+### 1.3.1 R Graphics VS ggplot
 
+::: panel-tabset
 #### R Graphics
 
 ```{r}
@@ -54,7 +54,6 @@ ggplot(data=exam_data, aes(x = MATHS)) +
   ggtitle("Distribution of Maths scores")
 ```
 :::
-
 
 ## **1.4 Grammar of Graphics**
 
