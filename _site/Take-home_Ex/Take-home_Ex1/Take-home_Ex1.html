@@ -194,11 +194,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">In-class Exercise</span>
     </span>
   </li>  
-  <li class="nav-item">
-    <span class="nav-link">
-<span class="menu-text">Take-home exercise</span>
-    </span>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-take-home_exercise" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Take-home_exercise</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-take-home_exercise">    
+        <li>
+    <a class="dropdown-item" href="../../Take-home_Ex/Take-home_Ex1/Take-home_Ex1.html">
+ <span class="dropdown-text">Take-home_exercise1</span></a>
   </li>  
+    </ul>
+  </li>
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -215,10 +221,71 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a>
+  <li><a href="#visual-analytics-take-home-assignment" id="toc-visual-analytics-take-home-assignment" class="nav-link active" data-scroll-target="#visual-analytics-take-home-assignment">1 Visual Analytics Take Home Assignment</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">1.1 Overview</a>
   <ul>
+  <li><a href="#setting-the-scene" id="toc-setting-the-scene" class="nav-link" data-scroll-target="#setting-the-scene"><strong>1.2 Setting the scene</strong></a></li>
+  <li><a href="#the-task" id="toc-the-task" class="nav-link" data-scroll-target="#the-task"><strong>1.3 The Task</strong></a></li>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">1.4 Getting Started</a>
+  <ul class="collapse">
   <li><a href="#import-package" id="toc-import-package" class="nav-link" data-scroll-target="#import-package">Import Package</a></li>
-  <li><a href="#import-data" id="toc-import-data" class="nav-link" data-scroll-target="#import-data">Import Data</a></li>
+  </ul></li>
+  <li><a href="#import-data" id="toc-import-data" class="nav-link" data-scroll-target="#import-data">1.5 Import Data</a></li>
+  <li><a href="#data-pre-processing" id="toc-data-pre-processing" class="nav-link" data-scroll-target="#data-pre-processing">1.6 Data Pre-processing</a>
+  <ul class="collapse">
+  <li><a href="#glimpse-of-data" id="toc-glimpse-of-data" class="nav-link" data-scroll-target="#glimpse-of-data"><strong>1.6.1 Glimpse of data</strong></a></li>
+  <li><a href="#check-for-duplication" id="toc-check-for-duplication" class="nav-link" data-scroll-target="#check-for-duplication"><strong>1.6.2 Check for duplication</strong></a></li>
+  <li><a href="#filtering-data-for-selected-variables" id="toc-filtering-data-for-selected-variables" class="nav-link" data-scroll-target="#filtering-data-for-selected-variables"><strong>1.6.3 Filtering data for selected variables</strong></a></li>
+  <li><a href="#check-data-structure" id="toc-check-data-structure" class="nav-link" data-scroll-target="#check-data-structure"><strong>1.6.4 Check data structure</strong></a></li>
+  <li><a href="#re-casting-variables" id="toc-re-casting-variables" class="nav-link" data-scroll-target="#re-casting-variables">1.6.5 Re-casting variables</a></li>
+  <li><a href="#check-missing-values" id="toc-check-missing-values" class="nav-link" data-scroll-target="#check-missing-values">1.6.6 Check Missing Values</a>
+  <ul class="collapse">
+  <li><a href="#preview-pre-processed-dataframe" id="toc-preview-pre-processed-dataframe" class="nav-link" data-scroll-target="#preview-pre-processed-dataframe">Preview Pre-Processed Dataframe</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#visualization-analytics" id="toc-visualization-analytics" class="nav-link" data-scroll-target="#visualization-analytics">1.7 Visualization Analytics</a>
+  <ul class="collapse">
+  <li><a href="#plot1-distribution-of-students-performance" id="toc-plot1-distribution-of-students-performance" class="nav-link" data-scroll-target="#plot1-distribution-of-students-performance">1.7.1 Plot1: Distribution of students performance</a>
+  <ul class="collapse">
+  <li><a href="#visualization-plot1-analysis" id="toc-visualization-plot1-analysis" class="nav-link" data-scroll-target="#visualization-plot1-analysis">1.7.1.1 Visualization plot1 analysis:</a></li>
+  </ul></li>
+  <li><a href="#visualization-plot2-distribution-of-students-performance-by-gender" id="toc-visualization-plot2-distribution-of-students-performance-by-gender" class="nav-link" data-scroll-target="#visualization-plot2-distribution-of-students-performance-by-gender">1.7.2 Visualization Plot2: Distribution of students performance By Gender</a>
+  <ul class="collapse">
+  <li><a href="#visualization-plot2-analysis" id="toc-visualization-plot2-analysis" class="nav-link" data-scroll-target="#visualization-plot2-analysis">1.7.2.1 Visualization Plot2 Analysis:</a></li>
+  </ul></li>
+  <li><a href="#visualization-plot3-proportional-likert-distribution-of-learning-factors" id="toc-visualization-plot3-proportional-likert-distribution-of-learning-factors" class="nav-link" data-scroll-target="#visualization-plot3-proportional-likert-distribution-of-learning-factors">1.7.3 Visualization Plot3: Proportional Likert Distribution of Learning Factors</a>
+  <ul class="collapse">
+  <li><a href="#visualization-plot3-analysis" id="toc-visualization-plot3-analysis" class="nav-link" data-scroll-target="#visualization-plot3-analysis">1.7.3.1 Visualization Plot3 Analysis:</a></li>
+  </ul></li>
+  <li><a href="#visualization-plot4-average-influence-of-factors-on-learning-outcomes" id="toc-visualization-plot4-average-influence-of-factors-on-learning-outcomes" class="nav-link" data-scroll-target="#visualization-plot4-average-influence-of-factors-on-learning-outcomes">1.7.4 Visualization Plot4: Average Influence of Factors on Learning Outcomes</a>
+  <ul class="collapse">
+  <li><a href="#visualization-plot4-analysis" id="toc-visualization-plot4-analysis" class="nav-link" data-scroll-target="#visualization-plot4-analysis">1.7.4.1 Visualization Plot4 Analysis:</a></li>
+  </ul></li>
+  <li><a href="#visualization-plot5-gpa-distribution-by-study-methods" id="toc-visualization-plot5-gpa-distribution-by-study-methods" class="nav-link" data-scroll-target="#visualization-plot5-gpa-distribution-by-study-methods">1.7.5 Visualization Plot5: GPA distribution by study methods</a>
+  <ul class="collapse">
+  <li><a href="#visualization-plot5-analysis" id="toc-visualization-plot5-analysis" class="nav-link" data-scroll-target="#visualization-plot5-analysis">1.7.5.1 Visualization Plot5 Analysis:</a></li>
+  </ul></li>
+  <li><a href="#visualization-plot5-gpa-distribution-by-study-methods-1" id="toc-visualization-plot5-gpa-distribution-by-study-methods-1" class="nav-link" data-scroll-target="#visualization-plot5-gpa-distribution-by-study-methods-1">1.7.6 Visualization Plot5: GPA distribution by study methods</a>
+  <ul class="collapse">
+  <li><a href="#visualization-plot5-analysis-1" id="toc-visualization-plot5-analysis-1" class="nav-link" data-scroll-target="#visualization-plot5-analysis-1">1.7.6.1 Visualization Plot5 Analysis:</a></li>
+  </ul></li>
+  <li><a href="#visualization-plot7-gpa-by-university-support-level" id="toc-visualization-plot7-gpa-by-university-support-level" class="nav-link" data-scroll-target="#visualization-plot7-gpa-by-university-support-level">1.7.7 Visualization Plot7: GPA by university support level</a></li>
+  <li><a href="#visualization-plot7-analysis" id="toc-visualization-plot7-analysis" class="nav-link" data-scroll-target="#visualization-plot7-analysis">1.7.7.1 Visualization Plot7 Analysis:</a></li>
+  <li><a href="#visualization-plot8-gpa-distributions-across-learning-factors" id="toc-visualization-plot8-gpa-distributions-across-learning-factors" class="nav-link" data-scroll-target="#visualization-plot8-gpa-distributions-across-learning-factors">1.7.8 Visualization Plot8: GPA Distributions Across Learning Factors</a>
+  <ul class="collapse">
+  <li><a href="#visualization-plot8-analysis" id="toc-visualization-plot8-analysis" class="nav-link" data-scroll-target="#visualization-plot8-analysis">1.7.8.1 Visualization Plot8 Analysis:</a></li>
+  </ul></li>
+  <li><a href="#visualization-plot9-distributions-of-gpa-by-friends-influence" id="toc-visualization-plot9-distributions-of-gpa-by-friends-influence" class="nav-link" data-scroll-target="#visualization-plot9-distributions-of-gpa-by-friends-influence">1.7.9.1 Visualization Plot9: Distributions of GPA by Friends’ Influence</a>
+  <ul class="collapse">
+  <li><a href="#visualization-plot9-analysis" id="toc-visualization-plot9-analysis" class="nav-link" data-scroll-target="#visualization-plot9-analysis">1.7.9.1 Visualization Plot9 Analysis:</a></li>
+  </ul></li>
+  <li><a href="#visualization-plot10-distributions-of-gpa-by-level-of-competing-class" id="toc-visualization-plot10-distributions-of-gpa-by-level-of-competing-class" class="nav-link" data-scroll-target="#visualization-plot10-distributions-of-gpa-by-level-of-competing-class">1.7.10 Visualization Plot10: Distributions of GPA by Level of Competing Class</a>
+  <ul class="collapse">
+  <li><a href="#visualization-plot10-analysis" id="toc-visualization-plot10-analysis" class="nav-link" data-scroll-target="#visualization-plot10-analysis">1.7.10.1 Visualization Plot10 Analysis:</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><strong>1.8 Summary:</strong></a></li>
+  <li><a href="#reference" id="toc-reference" class="nav-link" data-scroll-target="#reference">Reference:</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -252,7 +319,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">February 7, 2026</p>
+      <p class="date-modified">February 8, 2026</p>
     </div>
   </div>
     
@@ -263,22 +330,60 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<section id="visual-analytics-take-home-assignment" class="level1">
+<h1>1 Visual Analytics Take Home Assignment</h1>
+</section>
 <section id="overview" class="level1">
-<h1>Overview</h1>
-<section id="import-package" class="level2">
-<h2 class="anchored" data-anchor-id="import-package">Import Package</h2>
+<h1>1.1 Overview</h1>
+<p>This handout provides the context, task, expectations and grading criteria of Take-home Exercise 1. Students must review and understand them before getting started with the take-home exercise.</p>
+<section id="setting-the-scene" class="level2">
+<h2 class="anchored" data-anchor-id="setting-the-scene"><strong>1.2 Setting the scene</strong></h2>
+<p>Survey analysis is the process of transforming raw survey data into decision-relevant insights. It focuses on identifying patterns, trends, and relationships within responses by using descriptive methods (such as counts, percentages, and averages) as well as inferential methods (such as correlations and significance tests) to interpret results and inform decision-making.</p>
+</section>
+<section id="the-task" class="level2">
+<h2 class="anchored" data-anchor-id="the-task"><strong>1.3 The Task</strong></h2>
+<p>For this take-home exercise, students are required to select one of the survey datasets below and apply appropriate, visually-driven survey analysis methods to reveal and communicate&nbsp;<strong>at least five</strong>&nbsp;and&nbsp;<strong>no more than ten</strong>&nbsp;key observations derived from their analysis.</p>
+<ul>
+<li><a href="https://www.sciencedirect.com/science/article/pii/S2352340925001702">Dataset of factors affecting learning outcomes of students at the University of Education,Vietnam National University, Hanoi</a></li>
+</ul>
+<p>Above dataset is used for the subsequent pre-processing and analysis.</p>
+</section>
+<section id="getting-started" class="level2">
+<h2 class="anchored" data-anchor-id="getting-started">1.4 Getting Started</h2>
+<p>We load the following R packages using the <code>pacman::p_load()</code> function:</p>
+<ul>
+<li><strong>ggstatsplot</strong>: Extends <strong>ggplot2</strong> by adding statistical tests, effect sizes, and annotations directly to plots</li>
+<li><strong>tidyverse</strong>: Core collection of R packages designed for data science (e.g., <code>dplyr</code>, <code>ggplot2</code>, <code>tidyr</code>, <code>readr</code>)</li>
+<li><strong>ggrepel</strong>: Provides geoms for <strong>ggplot2</strong> to repel overlapping text labels</li>
+<li><strong>patchwork</strong>: To prepare composite figures created using <strong>ggplot2</strong></li>
+<li><strong>janitor</strong>: Tools for cleaning data, especially column names and tabulations</li>
+<li><strong>colorspace</strong>: Advanced color palette tools and color space manipulation for visualizations</li>
+<li><strong>ggdist</strong>: For visualizations of distributions and uncertainty (e.g., intervals, slabs, and half-eye plots)</li>
+<li><strong>ggridges</strong>: To plot ridgeline (joy) plots for visualizing distributions</li>
+<li><strong>FunnelPlotR</strong>: To create funnel plots commonly used in meta-analysis and institutional performance comparisons</li>
+<li><strong>knitr</strong>: To generate dynamic reports and tables in R Markdown</li>
+<li><strong>gganimate</strong>: To create animated <strong>ggplot2</strong> visualizations</li>
+<li><strong>gifski</strong>: Renders animations from <strong>gganimate</strong> into GIF files</li>
+<li><strong>gapminder</strong>: Provides the Gapminder dataset for teaching and demonstrating data visualization</li>
+<li><strong>ggthemes</strong>: Additional themes and scales for <strong>ggplot2</strong></li>
+<li><strong>hrbrthemes</strong>: Typography-focused themes for professional-quality <strong>ggplot2</strong> graphics</li>
+<li><strong>readxl</strong>: To read Excel files (<code>.xls</code> and <code>.xlsx</code>) into R</li>
+</ul>
+<section id="import-package" class="level3">
+<h3 class="anchored" data-anchor-id="import-package">Import Package</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(ggstatsplot, tidyverse,ggrepel, patchwork, janitor,colorspaces,ggstatsplot,ggdist,ggridges,FunnelPlotR,knitr,gganimate,gifski,gapminder,</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>               ggthemes, hrbrthemes,</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>               tidyverse,readxl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
+</section>
 <section id="import-data" class="level2">
-<h2 class="anchored" data-anchor-id="import-data">Import Data</h2>
+<h2 class="anchored" data-anchor-id="import-data">1.5 Import Data</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df_raw <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"data/Database paper.xlsx"</span>) <span class="sc">%&gt;%</span></span>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>raw <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"data/Database paper.xlsx"</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>()</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>df_raw</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>raw</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2,170 × 22
     year gender policy_stu minority_stu poor_stu father_edu mother_edu
@@ -302,6 +407,784 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 #   infuence_f_friends &lt;dbl&gt;</code></pre>
 </div>
 </div>
+</section>
+<section id="data-pre-processing" class="level2">
+<h2 class="anchored" data-anchor-id="data-pre-processing">1.6 Data Pre-processing</h2>
+<section id="glimpse-of-data" class="level3">
+<h3 class="anchored" data-anchor-id="glimpse-of-data"><strong>1.6.1 Glimpse of data</strong></h3>
+<p>By using the <code>glimpse()</code> function, the dataset consists of 2,170 rows and 22 columns.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(raw)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 2,170
+Columns: 22
+$ year                &lt;dbl&gt; 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,…
+$ gender              &lt;dbl&gt; 2, 1, 2, 2, 1, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2,…
+$ policy_stu          &lt;dbl&gt; 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2,…
+$ minority_stu        &lt;dbl&gt; 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,…
+$ poor_stu            &lt;dbl&gt; 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,…
+$ father_edu          &lt;dbl&gt; 4, 3, 4, 5, 2, 5, 6, 5, 5, 5, 3, 3, 3, 3, 3, 4, 5,…
+$ mother_edu          &lt;dbl&gt; 4, 3, 4, 4, 3, 5, 5, 4, 5, 4, 3, 3, 3, 4, 3, 4, 5,…
+$ father_occupation   &lt;dbl&gt; 2, 2, 1, 1, 3, 1, 1, 5, 1, 3, 3, 3, 3, 3, 2, 2, 4,…
+$ mother_occupation   &lt;dbl&gt; 3, 4, 2, 1, 3, 2, 4, 3, 1, 3, 3, 3, 3, 3, 2, 2, 4,…
+$ time_friends        &lt;dbl&gt; 2, 1, 1, 2, 1, 1, 2, 2, 1, 3, 2, 2, 2, 2, 2, 1, 3,…
+$ time_socical_media  &lt;dbl&gt; 2, 3, 2, 2, 2, 3, 2, 2, 2, 2, 2, 1, 2, 2, 2, 3, 4,…
+$ time_studying       &lt;dbl&gt; 5, 5, 5, 5, 1, 2, 5, 5, 5, 5, 5, 5, 5, 1, 5, 5, 5,…
+$ gpa                 &lt;dbl&gt; 4, 3, 4, 4, 4, 4, 3, 5, 5, 3, 3, 4, 4, 3, 5, 4, 4,…
+$ adapt_learning_uni  &lt;dbl&gt; 4, 3, 4, 4, 5, 4, 4, 4, 4, 3, 4, 4, 4, 5, 4, 4, 5,…
+$ study_methods       &lt;dbl&gt; 4, 3, 4, 4, 5, 4, 4, 4, 4, 4, 4, 4, 4, 5, 4, 3, 5,…
+$ support_of_uni      &lt;dbl&gt; 3, 3, 4, 5, 5, 5, 5, 5, 4, 5, 4, 4, 4, 5, 4, 4, 5,…
+$ support_of_lec      &lt;dbl&gt; 4, 4, 4, 5, 5, 4, 5, 4, 4, 5, 4, 4, 4, 5, 4, 4, 5,…
+$ facilitie_uni       &lt;dbl&gt; 4, 4, 3, 5, 5, 5, 5, 4, 4, 5, 4, 4, 4, 5, 4, 3, 5,…
+$ quality_lecturer    &lt;dbl&gt; 4, 3, 4, 5, 5, 5, 4, 5, 5, 5, 4, 4, 4, 5, 4, 4, 5,…
+$ training_curriculum &lt;dbl&gt; 4, 3, 4, 4, 5, 4, 5, 4, 4, 5, 4, 4, 4, 5, 4, 3, 5,…
+$ competitive_class   &lt;dbl&gt; 3, 3, 4, 4, 4, 3, 4, 3, 4, 4, 4, 4, 4, 5, 4, 4, 5,…
+$ infuence_f_friends  &lt;dbl&gt; 3, 4, 4, 4, 5, 3, 5, 4, 4, 4, 4, 4, 4, 5, 4, 5, 4,…</code></pre>
+</div>
+</div>
+</section>
+<section id="check-for-duplication" class="level3">
+<h3 class="anchored" data-anchor-id="check-for-duplication"><strong>1.6.2 Check for duplication</strong></h3>
+<p>By using the <code>duplicated</code> function,</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>raw[<span class="fu">duplicated</span>(raw),]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 226 × 22
+    year gender policy_stu minority_stu poor_stu father_edu mother_edu
+   &lt;dbl&gt;  &lt;dbl&gt;      &lt;dbl&gt;        &lt;dbl&gt;    &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;
+ 1     5      2          2            2        2          5          5
+ 2     5      1          2            2        2          5          5
+ 3     5      1          2            2        2          3          3
+ 4     5      2          2            2        2          4          3
+ 5     5      2          2            2        2          3          3
+ 6     5      2          2            2        2          6          6
+ 7     5      2          2            2        2          5          5
+ 8     5      2          2            2        2          5          5
+ 9     5      2          2            2        2          5          5
+10     5      2          1            2        2          4          3
+# ℹ 216 more rows
+# ℹ 15 more variables: father_occupation &lt;dbl&gt;, mother_occupation &lt;dbl&gt;,
+#   time_friends &lt;dbl&gt;, time_socical_media &lt;dbl&gt;, time_studying &lt;dbl&gt;,
+#   gpa &lt;dbl&gt;, adapt_learning_uni &lt;dbl&gt;, study_methods &lt;dbl&gt;,
+#   support_of_uni &lt;dbl&gt;, support_of_lec &lt;dbl&gt;, facilitie_uni &lt;dbl&gt;,
+#   quality_lecturer &lt;dbl&gt;, training_curriculum &lt;dbl&gt;, competitive_class &lt;dbl&gt;,
+#   infuence_f_friends &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<p>Since this is a survey data with no id, the duplication is normal(no unique combination row).</p>
+</section>
+<section id="filtering-data-for-selected-variables" class="level3">
+<h3 class="anchored" data-anchor-id="filtering-data-for-selected-variables"><strong>1.6.3 Filtering data for selected variables</strong></h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 73%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable Name</th>
+<th>Description</th>
+<th>Type of Variable</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Year</strong></td>
+<td>Student’s current year of study (1 = First-year, 2 = Second-year, 3 = Third-year, 4 = Fourth-year, 5 = Graduated)</td>
+<td>Ordinal</td>
+</tr>
+<tr class="even">
+<td><strong>Gender</strong></td>
+<td>Student’s gender (1 = Male, 2 = Female)</td>
+<td>Categorical unordered</td>
+</tr>
+<tr class="odd">
+<td><strong>Policy_Stu</strong></td>
+<td>Whether the student receives government policy support (1 = Yes, 2 = No)</td>
+<td>Categorical unordered</td>
+</tr>
+<tr class="even">
+<td><strong>Minority_Stu</strong></td>
+<td>Whether the student belongs to a minority group (1 = Yes, 2 = No)</td>
+<td>Categorical unordered</td>
+</tr>
+<tr class="odd">
+<td><strong>Poor_Stu</strong></td>
+<td>Whether the student’s household is classified as poor (1 = Yes, 2 = No)</td>
+<td>Categorical unordered</td>
+</tr>
+<tr class="even">
+<td><strong>Father_Edu</strong></td>
+<td>Father’s highest educational attainment (1 = Primary, 2 = Secondary, 3 = High school, 4 = College, 5 = University/Graduate, 6 = Other)</td>
+<td>Ordinal</td>
+</tr>
+<tr class="odd">
+<td><strong>Mother_Edu</strong></td>
+<td>Mother’s highest educational attainment (1 = Primary, 2 = Secondary, 3 = High school, 4 = College, 5 = University/Graduate, 6 = Other)</td>
+<td>Ordinal</td>
+</tr>
+<tr class="even">
+<td><strong>Father_Occupation</strong></td>
+<td>Father’s occupation status (1 = Government employee, 2 = Self-employed, 3 = Freelance, 4 = Other, 5 = Not public)</td>
+<td>Categorical unordered</td>
+</tr>
+<tr class="odd">
+<td><strong>Mother_Occupation</strong></td>
+<td>Mother’s occupation status (1 = Government employee, 2 = Self-employed, 3 = Freelance, 4 = Other, 5 = Not public)</td>
+<td>Categorical unordered</td>
+</tr>
+<tr class="even">
+<td><strong>Time_Friends</strong></td>
+<td>Average daily time spent hanging out with friends (1 = Under 1 hour, 5 = Over 4 hours)</td>
+<td>Ordinal</td>
+</tr>
+<tr class="odd">
+<td><strong>Time_SocicalMedia</strong></td>
+<td>Average daily time spent on social media (1 = Under 1 hour, 5 = Over 4 hours)</td>
+<td>Ordinal</td>
+</tr>
+<tr class="even">
+<td><strong>Time_Studying</strong></td>
+<td>Average daily time spent studying (1 = Under 2 hours, 5 = Over 8 hours)</td>
+<td>Ordinal</td>
+</tr>
+<tr class="odd">
+<td><strong>GPA</strong></td>
+<td>Cumulative GPA category (1 = Poor, 5 = Excellent)</td>
+<td>Ordinal</td>
+</tr>
+<tr class="even">
+<td><strong>Adapt_Learning_Uni</strong></td>
+<td>Level of adaptation to the university learning environment (1 = Not at all, 5 = Very)</td>
+<td>Ordinal</td>
+</tr>
+<tr class="odd">
+<td><strong>Study_Methods</strong></td>
+<td>Degree to which study methods affect learning outcomes (1 = Not at all, 5 = Very)</td>
+<td>Ordinal</td>
+</tr>
+<tr class="even">
+<td><strong>SupportOf_Uni</strong></td>
+<td>Perceived level of university support (1 = Not at all, 5 = Very)</td>
+<td>Ordinal</td>
+</tr>
+<tr class="odd">
+<td><strong>SupportOf_Lec</strong></td>
+<td>Perceived level of lecturer support (1 = Not at all, 5 = Very)</td>
+<td>Ordinal</td>
+</tr>
+<tr class="even">
+<td><strong>Facilitie_Uni</strong></td>
+<td>Responsiveness of university facilities (1 = Not at all, 5 = Very)</td>
+<td>Ordinal</td>
+</tr>
+<tr class="odd">
+<td><strong>Quality_Lecturer</strong></td>
+<td>Perceived quality of university lecturers (1 = Not at all, 5 = Very)</td>
+<td>Ordinal</td>
+</tr>
+<tr class="even">
+<td><strong>TrainingCurriculum</strong></td>
+<td>Suitability of the university curriculum (1 = Not at all, 5 = Very)</td>
+<td>Ordinal</td>
+</tr>
+<tr class="odd">
+<td><strong>Competitive_Class</strong></td>
+<td>Impact of class competition on the student (1 = Not at all, 5 = Very)</td>
+<td>Ordinal</td>
+</tr>
+<tr class="even">
+<td><strong>InfuenceF_Friends</strong></td>
+<td>Influence of classmates/friends on learning outcomes (1 = Not at all, 5 = Very)</td>
+<td>Ordinal<br>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="check-data-structure" class="level3">
+<h3 class="anchored" data-anchor-id="check-data-structure"><strong>1.6.4 Check data structure</strong></h3>
+<p>By using the&nbsp;<code>str()</code>&nbsp;function, we observe that some variables may need to be re-casted.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(raw)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tibble [2,170 × 22] (S3: tbl_df/tbl/data.frame)
+ $ year               : num [1:2170] 5 5 5 5 5 5 5 5 5 5 ...
+ $ gender             : num [1:2170] 2 1 2 2 1 2 2 2 2 2 ...
+ $ policy_stu         : num [1:2170] 2 2 2 2 1 2 2 2 2 2 ...
+ $ minority_stu       : num [1:2170] 2 2 2 2 2 2 2 2 2 2 ...
+ $ poor_stu           : num [1:2170] 2 2 2 2 2 2 2 2 2 2 ...
+ $ father_edu         : num [1:2170] 4 3 4 5 2 5 6 5 5 5 ...
+ $ mother_edu         : num [1:2170] 4 3 4 4 3 5 5 4 5 4 ...
+ $ father_occupation  : num [1:2170] 2 2 1 1 3 1 1 5 1 3 ...
+ $ mother_occupation  : num [1:2170] 3 4 2 1 3 2 4 3 1 3 ...
+ $ time_friends       : num [1:2170] 2 1 1 2 1 1 2 2 1 3 ...
+ $ time_socical_media : num [1:2170] 2 3 2 2 2 3 2 2 2 2 ...
+ $ time_studying      : num [1:2170] 5 5 5 5 1 2 5 5 5 5 ...
+ $ gpa                : num [1:2170] 4 3 4 4 4 4 3 5 5 3 ...
+ $ adapt_learning_uni : num [1:2170] 4 3 4 4 5 4 4 4 4 3 ...
+ $ study_methods      : num [1:2170] 4 3 4 4 5 4 4 4 4 4 ...
+ $ support_of_uni     : num [1:2170] 3 3 4 5 5 5 5 5 4 5 ...
+ $ support_of_lec     : num [1:2170] 4 4 4 5 5 4 5 4 4 5 ...
+ $ facilitie_uni      : num [1:2170] 4 4 3 5 5 5 5 4 4 5 ...
+ $ quality_lecturer   : num [1:2170] 4 3 4 5 5 5 4 5 5 5 ...
+ $ training_curriculum: num [1:2170] 4 3 4 4 5 4 5 4 4 5 ...
+ $ competitive_class  : num [1:2170] 3 3 4 4 4 3 4 3 4 4 ...
+ $ infuence_f_friends : num [1:2170] 3 4 4 4 5 3 5 4 4 4 ...</code></pre>
+</div>
+</div>
+</section>
+<section id="re-casting-variables" class="level3">
+<h3 class="anchored" data-anchor-id="re-casting-variables">1.6.5 Re-casting variables</h3>
+<p><strong>Re-cast variables for interpretability in later visualization,</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>raw<span class="sc">$</span>gender <span class="ot">&lt;-</span> <span class="fu">factor</span>(raw<span class="sc">$</span>gender,</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>),</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Male"</span>, <span class="st">"Female"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>raw<span class="sc">$</span>year <span class="ot">&lt;-</span> <span class="fu">factor</span>(raw<span class="sc">$</span>year,</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>                   <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>),</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>                   <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"First-year"</span>, <span class="st">"Second-year"</span>, <span class="st">"Third-year"</span>,</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>                              <span class="st">"Fourth-year"</span>, <span class="st">"Graduated"</span>),</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>                   <span class="at">ordered =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>raw<span class="sc">$</span>policy_stu <span class="ot">&lt;-</span> <span class="fu">factor</span>(raw<span class="sc">$</span>policy_stu,</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>                         <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>),</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>                         <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Yes"</span>, <span class="st">"No"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>raw<span class="sc">$</span>minority_stu <span class="ot">&lt;-</span> <span class="fu">factor</span>(raw<span class="sc">$</span>minority_stu,</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>                           <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>),</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>                           <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Yes"</span>, <span class="st">"No"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>raw<span class="sc">$</span>poor_stu <span class="ot">&lt;-</span> <span class="fu">factor</span>(raw<span class="sc">$</span>poor_stu,</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>                       <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>),</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>                       <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Yes"</span>, <span class="st">"No"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>raw<span class="sc">$</span>father_edu <span class="ot">&lt;-</span> <span class="fu">factor</span>(raw<span class="sc">$</span>father_edu,</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>                         <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>),</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>                         <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Primary school"</span>, <span class="st">"Secondary school"</span>,</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>                                    <span class="st">"High school"</span>, <span class="st">"College"</span>,</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>                                    <span class="st">"University/Graduate"</span>, <span class="st">"Other"</span>),</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>                         <span class="at">ordered =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>raw<span class="sc">$</span>mother_edu <span class="ot">&lt;-</span> <span class="fu">factor</span>(raw<span class="sc">$</span>mother_edu,</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>                         <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>),</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>                         <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Primary school"</span>, <span class="st">"Secondary school"</span>,</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>                                    <span class="st">"High school"</span>, <span class="st">"College"</span>,</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>                                    <span class="st">"University/Graduate"</span>, <span class="st">"Other"</span>),</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>                         <span class="at">ordered =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>raw<span class="sc">$</span>father_occupation <span class="ot">&lt;-</span> <span class="fu">factor</span>(raw<span class="sc">$</span>father_occupation,</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>                                <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>),</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>                                <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Government employee"</span>,</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>                                           <span class="st">"Self-employed"</span>,</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>                                           <span class="st">"Freelance"</span>,</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>                                           <span class="st">"Other"</span>,</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>                                           <span class="st">"Not public"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>raw<span class="sc">$</span>mother_occupation <span class="ot">&lt;-</span> <span class="fu">factor</span>(raw<span class="sc">$</span>mother_occupation,</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>                                <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>),</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>                                <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Government employee"</span>,</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>                                           <span class="st">"Self-employed"</span>,</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>                                           <span class="st">"Freelance"</span>,</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>                                           <span class="st">"Other"</span>,</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>                                           <span class="st">"Not public"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>raw<span class="sc">$</span>time_friends <span class="ot">&lt;-</span> <span class="fu">factor</span>(raw<span class="sc">$</span>time_friends,</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>                           <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>),</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>                           <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Under 1 hour"</span>,</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>                                      <span class="st">"1–&lt;2 hours"</span>,</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>                                      <span class="st">"2–&lt;3 hours"</span>,</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>                                      <span class="st">"3–&lt;4 hours"</span>,</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>                                      <span class="st">"Over 4 hours"</span>),</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>                           <span class="at">ordered =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>raw<span class="sc">$</span>time_socical_media <span class="ot">&lt;-</span> <span class="fu">factor</span>(raw<span class="sc">$</span>time_socical_media,</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>),</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Under 1 hour"</span>,</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">"1–&lt;2 hours"</span>,</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">"2–&lt;3 hours"</span>,</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">"3–&lt;4 hours"</span>,</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">"Over 4 hours"</span>),</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">ordered =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>raw<span class="sc">$</span>time_studying <span class="ot">&lt;-</span> <span class="fu">factor</span>(raw<span class="sc">$</span>time_studying,</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>                            <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>),</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>                            <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Under 2 hours"</span>,</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">"2–&lt;4 hours"</span>,</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">"4–&lt;6 hours"</span>,</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">"6–&lt;8 hours"</span>,</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">"Over 8 hours"</span>),</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>                            <span class="at">ordered =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>raw<span class="sc">$</span>gpa <span class="ot">&lt;-</span> <span class="fu">factor</span>(raw<span class="sc">$</span>gpa,</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>),</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>                  <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Poor"</span>, <span class="st">"Average"</span>, <span class="st">"Fair"</span>,</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"Good"</span>, <span class="st">"Excellent"</span>),</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">ordered =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Re-cast likert-scale variables below,</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>likert_levels <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>likert_labels <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Not at all"</span>, <span class="st">"Little"</span>, <span class="st">"Moderate"</span>, <span class="st">"Quite"</span>, <span class="st">"Very"</span>)</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>raw<span class="sc">$</span>adapt_learning_uni <span class="ot">&lt;-</span> <span class="fu">factor</span>(raw<span class="sc">$</span>adapt_learning_uni,</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">levels =</span> likert_levels,</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">labels =</span> likert_labels,</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">ordered =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>raw<span class="sc">$</span>study_methods <span class="ot">&lt;-</span> <span class="fu">factor</span>(raw<span class="sc">$</span>study_methods,</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>                            <span class="at">levels =</span> likert_levels,</span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>                            <span class="at">labels =</span> likert_labels,</span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>                            <span class="at">ordered =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>raw<span class="sc">$</span>support_of_uni <span class="ot">&lt;-</span> <span class="fu">factor</span>(raw<span class="sc">$</span>support_of_uni,</span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>                             <span class="at">levels =</span> likert_levels,</span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>                             <span class="at">labels =</span> likert_labels,</span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>                             <span class="at">ordered =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a>raw<span class="sc">$</span>support_of_lec <span class="ot">&lt;-</span> <span class="fu">factor</span>(raw<span class="sc">$</span>support_of_lec,</span>
+<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a>                             <span class="at">levels =</span> likert_levels,</span>
+<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a>                             <span class="at">labels =</span> likert_labels,</span>
+<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a>                             <span class="at">ordered =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-24"><a href="#cb23-24" aria-hidden="true" tabindex="-1"></a>raw<span class="sc">$</span>facilitie_uni <span class="ot">&lt;-</span> <span class="fu">factor</span>(raw<span class="sc">$</span>facilitie_uni,</span>
+<span id="cb23-25"><a href="#cb23-25" aria-hidden="true" tabindex="-1"></a>                            <span class="at">levels =</span> likert_levels,</span>
+<span id="cb23-26"><a href="#cb23-26" aria-hidden="true" tabindex="-1"></a>                            <span class="at">labels =</span> likert_labels,</span>
+<span id="cb23-27"><a href="#cb23-27" aria-hidden="true" tabindex="-1"></a>                            <span class="at">ordered =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb23-28"><a href="#cb23-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-29"><a href="#cb23-29" aria-hidden="true" tabindex="-1"></a>raw<span class="sc">$</span>quality_lecturer <span class="ot">&lt;-</span> <span class="fu">factor</span>(raw<span class="sc">$</span>quality_lecturer,</span>
+<span id="cb23-30"><a href="#cb23-30" aria-hidden="true" tabindex="-1"></a>                               <span class="at">levels =</span> likert_levels,</span>
+<span id="cb23-31"><a href="#cb23-31" aria-hidden="true" tabindex="-1"></a>                               <span class="at">labels =</span> likert_labels,</span>
+<span id="cb23-32"><a href="#cb23-32" aria-hidden="true" tabindex="-1"></a>                               <span class="at">ordered =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb23-33"><a href="#cb23-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-34"><a href="#cb23-34" aria-hidden="true" tabindex="-1"></a>raw<span class="sc">$</span>training_curriculum <span class="ot">&lt;-</span> <span class="fu">factor</span>(raw<span class="sc">$</span>training_curriculum,</span>
+<span id="cb23-35"><a href="#cb23-35" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">levels =</span> likert_levels,</span>
+<span id="cb23-36"><a href="#cb23-36" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">labels =</span> likert_labels,</span>
+<span id="cb23-37"><a href="#cb23-37" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">ordered =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb23-38"><a href="#cb23-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-39"><a href="#cb23-39" aria-hidden="true" tabindex="-1"></a>raw<span class="sc">$</span>competitive_class <span class="ot">&lt;-</span> <span class="fu">factor</span>(raw<span class="sc">$</span>competitive_class,</span>
+<span id="cb23-40"><a href="#cb23-40" aria-hidden="true" tabindex="-1"></a>                                <span class="at">levels =</span> likert_levels,</span>
+<span id="cb23-41"><a href="#cb23-41" aria-hidden="true" tabindex="-1"></a>                                <span class="at">labels =</span> likert_labels,</span>
+<span id="cb23-42"><a href="#cb23-42" aria-hidden="true" tabindex="-1"></a>                                <span class="at">ordered =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb23-43"><a href="#cb23-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-44"><a href="#cb23-44" aria-hidden="true" tabindex="-1"></a>raw<span class="sc">$</span>infuence_f_friends <span class="ot">&lt;-</span> <span class="fu">factor</span>(raw<span class="sc">$</span>infuence_f_friends,</span>
+<span id="cb23-45"><a href="#cb23-45" aria-hidden="true" tabindex="-1"></a>                                <span class="at">levels =</span> likert_levels,</span>
+<span id="cb23-46"><a href="#cb23-46" aria-hidden="true" tabindex="-1"></a>                                <span class="at">labels =</span> likert_labels,</span>
+<span id="cb23-47"><a href="#cb23-47" aria-hidden="true" tabindex="-1"></a>                                <span class="at">ordered =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="check-missing-values" class="level3">
+<h3 class="anchored" data-anchor-id="check-missing-values">1.6.6 Check Missing Values</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colSums</span>(<span class="fu">is.na</span>(raw))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>               year              gender          policy_stu        minority_stu 
+                  0                   0                   0                   0 
+           poor_stu          father_edu          mother_edu   father_occupation 
+                  0                   0                   0                   0 
+  mother_occupation        time_friends  time_socical_media       time_studying 
+                  0                   0                   0                   0 
+                gpa  adapt_learning_uni       study_methods      support_of_uni 
+                  0                   0                   0                   0 
+     support_of_lec       facilitie_uni    quality_lecturer training_curriculum 
+                  0                   0                   0                   0 
+  competitive_class  infuence_f_friends 
+                  0                   0 </code></pre>
+</div>
+</div>
+<section id="preview-pre-processed-dataframe" class="level4">
+<h4 class="anchored" data-anchor-id="preview-pre-processed-dataframe">Preview Pre-Processed Dataframe</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(raw,<span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 20 × 22
+   year      gender policy_stu minority_stu poor_stu father_edu       mother_edu
+   &lt;ord&gt;     &lt;fct&gt;  &lt;fct&gt;      &lt;fct&gt;        &lt;fct&gt;    &lt;ord&gt;            &lt;ord&gt;     
+ 1 Graduated Female No         No           No       College          College   
+ 2 Graduated Male   No         No           No       High school      High scho…
+ 3 Graduated Female No         No           No       College          College   
+ 4 Graduated Female No         No           No       University/Grad… College   
+ 5 Graduated Male   Yes        No           No       Secondary school High scho…
+ 6 Graduated Female No         No           No       University/Grad… Universit…
+ 7 Graduated Female No         No           No       Other            Universit…
+ 8 Graduated Female No         No           No       University/Grad… College   
+ 9 Graduated Female No         No           No       University/Grad… Universit…
+10 Graduated Female No         No           No       University/Grad… College   
+11 Graduated Male   No         No           No       High school      High scho…
+12 Graduated Female No         No           No       High school      High scho…
+13 Graduated Female No         No           No       High school      High scho…
+14 Graduated Female Yes        No           No       High school      College   
+15 Graduated Female No         No           No       High school      High scho…
+16 Graduated Female No         No           No       College          College   
+17 Graduated Female No         No           No       University/Grad… Universit…
+18 Graduated Female No         No           No       University/Grad… Universit…
+19 Graduated Female No         No           No       University/Grad… Universit…
+20 Graduated Female No         No           No       Secondary school High scho…
+# ℹ 15 more variables: father_occupation &lt;fct&gt;, mother_occupation &lt;fct&gt;,
+#   time_friends &lt;ord&gt;, time_socical_media &lt;ord&gt;, time_studying &lt;ord&gt;,
+#   gpa &lt;ord&gt;, adapt_learning_uni &lt;ord&gt;, study_methods &lt;ord&gt;,
+#   support_of_uni &lt;ord&gt;, support_of_lec &lt;ord&gt;, facilitie_uni &lt;ord&gt;,
+#   quality_lecturer &lt;ord&gt;, training_curriculum &lt;ord&gt;, competitive_class &lt;ord&gt;,
+#   infuence_f_friends &lt;ord&gt;</code></pre>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="visualization-analytics" class="level2">
+<h2 class="anchored" data-anchor-id="visualization-analytics">1.7 Visualization Analytics</h2>
+<section id="plot1-distribution-of-students-performance" class="level3">
+<h3 class="anchored" data-anchor-id="plot1-distribution-of-students-performance">1.7.1 Plot1: Distribution of students performance</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(raw, <span class="fu">aes</span>(<span class="at">x =</span> gpa)) <span class="sc">+</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">"steelblue"</span>) <span class="sc">+</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Distribution of Students' GPA"</span>,</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"GPA category"</span>,</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Number of students"</span></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(raw, <span class="fu">aes</span>(<span class="at">x =</span> gpa)) <span class="sc">+</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">y =</span> <span class="fu">after_stat</span>(prop), <span class="at">group =</span> <span class="dv">1</span>),</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">fill =</span> <span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>percent) <span class="sc">+</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Proportion of Students by GPA Category"</span>,</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"GPA category"</span>,</span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Percentage of students"</span></span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>p1 <span class="sc">+</span>p2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Take-home_Ex1_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="visualization-plot1-analysis" class="level4">
+<h4 class="anchored" data-anchor-id="visualization-plot1-analysis">1.7.1.1 Visualization plot1 analysis:</h4>
+<p>This proportion bar chart emphasizes the relative composition of GPA categories rather than absolute count. Over Half of the student are concentrated in the fair category, while approximately one-third achieve good GPAs. The Poor and Excellent categories account for only a small proportion of students, reinforcing the observation that extreme academic outcomes are rare. By using percentages, this visualization allows easier comparison and interpretation, especially when comparing results across different samples. The chart highlights that most students perform at a satisfactory but not outstanding level, suggesting that improvements in teaching or learning strategies could meaningfully shift overall academic outcomes.</p>
+</section>
+</section>
+<section id="visualization-plot2-distribution-of-students-performance-by-gender" class="level3">
+<h3 class="anchored" data-anchor-id="visualization-plot2-distribution-of-students-performance-by-gender">1.7.2 Visualization Plot2: Distribution of students performance By Gender</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(raw, <span class="fu">aes</span>(<span class="at">x =</span> gender, <span class="at">fill =</span> gpa)) <span class="sc">+</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>percent) <span class="sc">+</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"GPA Distribution by Gender"</span>,</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Gender"</span>,</span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Proportion of students"</span>,</span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"GPA"</span></span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Take-home_Ex1_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="visualization-plot2-analysis" class="level4">
+<h4 class="anchored" data-anchor-id="visualization-plot2-analysis">1.7.2.1 Visualization Plot2 Analysis:</h4>
+<p>The stacked proportion bar chart compares GPA distributions between male and female students. Both genders show similar patterns, with the largest share of students in the fair and good categories. However, female students appear to have a slightly higher proportion in the good and excellent categories while male students show a marginally higher proportion in the fair category. Differences are modest, indicating that gender-based disparities in academic performance are limited in this sample. This visualization is effective becuase it compares relative distributions rather than raw counts allowing a fair comparison between genders even if group sizes differ.</p>
+</section>
+</section>
+<section id="visualization-plot3-proportional-likert-distribution-of-learning-factors" class="level3">
+<h3 class="anchored" data-anchor-id="visualization-plot3-proportional-likert-distribution-of-learning-factors">1.7.3 Visualization Plot3: Proportional Likert Distribution of Learning Factors</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>raw <span class="sc">%&gt;%</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(adapt_learning_uni,</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>         study_methods,</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>         support_of_uni,</span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>         support_of_lec,</span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>         quality_lecturer,</span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>         training_curriculum) <span class="sc">%&gt;%</span></span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">everything</span>(),</span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"factor"</span>,</span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"response"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> response, <span class="at">fill =</span> factor)) <span class="sc">+</span></span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span></span>
+<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>percent) <span class="sc">+</span></span>
+<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Factors Affecting Learning Outcomes at VNU University of Education"</span>,</span>
+<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Level of influence"</span>,</span>
+<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Proportion of students"</span>,</span>
+<span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"Factor"</span></span>
+<span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb32-20"><a href="#cb32-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Take-home_Ex1_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="visualization-plot3-analysis" class="level4">
+<h4 class="anchored" data-anchor-id="visualization-plot3-analysis">1.7.3.1 Visualization Plot3 Analysis:</h4>
+<p>This stacked proportional bar chart illustrates how students rate the influence of different factors on their learning outcomes. Across all factors, responses are concentrated in the Moderate, Quite, and Very categories, indicating that students generally perceive these factors as influential. Quality of lecturers and support from lecturers show stronger concentrations in the higher influence levels, suggesting their central role in shaping learning outcomes. In contrast, adaptation to the university environment displays a wider spread across influence levels, implying greater variation in student experiences. By presenting proportions rather than raw counts, the visualization allows meaningful comparison across factors while respecting the ordinal nature of the Likert scale.</p>
+</section>
+</section>
+<section id="visualization-plot4-average-influence-of-factors-on-learning-outcomes" class="level3">
+<h3 class="anchored" data-anchor-id="visualization-plot4-average-influence-of-factors-on-learning-outcomes">1.7.4 Visualization Plot4: Average Influence of Factors on Learning Outcomes</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>raw <span class="sc">%&gt;%</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(adapt_learning_uni,</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>         study_methods,</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>         support_of_uni,</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>         support_of_lec,</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>         quality_lecturer,</span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>         training_curriculum,</span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>         competitive_class,</span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>         infuence_f_friends) <span class="sc">%&gt;%</span></span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">everything</span>(),</span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"factor"</span>,</span>
+<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"score"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(factor) <span class="sc">%&gt;%</span></span>
+<span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_score =</span> <span class="fu">mean</span>(<span class="fu">as.numeric</span>(score))) <span class="sc">%&gt;%</span></span>
+<span id="cb33-15"><a href="#cb33-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(factor, mean_score), <span class="at">y =</span> mean_score)) <span class="sc">+</span></span>
+<span id="cb33-16"><a href="#cb33-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"steelblue"</span>) <span class="sc">+</span></span>
+<span id="cb33-17"><a href="#cb33-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb33-18"><a href="#cb33-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb33-19"><a href="#cb33-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Average Influence of Factors on Learning Outcomes"</span>,</span>
+<span id="cb33-20"><a href="#cb33-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Factor"</span>,</span>
+<span id="cb33-21"><a href="#cb33-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Average Likert score"</span></span>
+<span id="cb33-22"><a href="#cb33-22" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb33-23"><a href="#cb33-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Take-home_Ex1_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="visualization-plot4-analysis" class="level4">
+<h4 class="anchored" data-anchor-id="visualization-plot4-analysis">1.7.4.1 Visualization Plot4 Analysis:</h4>
+<p>This horizontal bar chart summarizes the average Likert scores for each factor, providing a clear ranking of perceived influence. Quality of lecturers emerges as the most influential factor, followed closely by lecturer support and training curriculum. Institutional support and competitive class environment occupy the middle range, while study methods and adaptation to the university environment show slightly lower average scores. Although mean values should be interpreted cautiously for ordinal data, this visualization offers a concise comparative overview that complements the proportional distribution shown in the first plot. Together, the figures highlight the dominant importance of teaching quality and academic support in student learning outcomes at VNU University of Education.</p>
+</section>
+</section>
+<section id="visualization-plot5-gpa-distribution-by-study-methods" class="level3">
+<h3 class="anchored" data-anchor-id="visualization-plot5-gpa-distribution-by-study-methods">1.7.5 Visualization Plot5: GPA distribution by study methods</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(raw, <span class="fu">aes</span>(<span class="at">x =</span> study_methods, <span class="at">fill =</span> gpa)) <span class="sc">+</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>percent) <span class="sc">+</span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"GPA Distribution by Study Methods"</span>,</span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Effectiveness of Study Methods"</span>,</span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Proportion of students"</span>,</span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"GPA"</span></span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Take-home_Ex1_files/figure-html/unnamed-chunk-28-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="visualization-plot5-analysis" class="level4">
+<h4 class="anchored" data-anchor-id="visualization-plot5-analysis">1.7.5.1 Visualization Plot5 Analysis:</h4>
+<p>This visualization shows how GPA outcomes vary with perceived study-method effectiveness. Students reporting Quite or Very effective study methods have higher proportions of Good and Excellent GPAs, while lower GPA categories are more common among those reporting weaker study methods. This suggests that effective learning strategies are strongly associated with better academic performance.</p>
+</section>
+</section>
+<section id="visualization-plot5-gpa-distribution-by-study-methods-1" class="level3">
+<h3 class="anchored" data-anchor-id="visualization-plot5-gpa-distribution-by-study-methods-1">1.7.6 Visualization Plot5: GPA distribution by study methods</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>raw <span class="sc">%&gt;%</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(quality_lecturer) <span class="sc">%&gt;%</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_gpa =</span> <span class="fu">mean</span>(<span class="fu">as.numeric</span>(gpa))) <span class="sc">%&gt;%</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> quality_lecturer, <span class="at">y =</span> mean_gpa)) <span class="sc">+</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"steelblue"</span>) <span class="sc">+</span></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Average GPA by Lecturer Quality"</span>,</span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Perceived Lecturer Quality"</span>,</span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Average GPA (ordinal score)"</span></span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Take-home_Ex1_files/figure-html/unnamed-chunk-29-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="visualization-plot5-analysis-1" class="level4">
+<h4 class="anchored" data-anchor-id="visualization-plot5-analysis-1">1.7.6.1 Visualization Plot5 Analysis:</h4>
+<p>This chart demonstrates a positive trend between perceived lecturer quality and average GPA. Students who rate lecturer quality more highly tend to achieve higher GPA categories. Although GPA is ordinal, the increasing pattern suggests that teaching quality plays an important role in shaping academic outcomes.</p>
+</section>
+</section>
+<section id="visualization-plot7-gpa-by-university-support-level" class="level3">
+<h3 class="anchored" data-anchor-id="visualization-plot7-gpa-by-university-support-level">1.7.7 Visualization Plot7: GPA by university support level</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(raw, <span class="fu">aes</span>(<span class="at">x =</span> support_of_uni, <span class="at">fill =</span> gpa)) <span class="sc">+</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>percent) <span class="sc">+</span></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"GPA Distribution by University Support"</span>,</span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Level of University Support"</span>,</span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Proportion of students"</span>,</span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"GPA"</span></span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Take-home_Ex1_files/figure-html/unnamed-chunk-30-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="visualization-plot7-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="visualization-plot7-analysis">1.7.7.1 Visualization Plot7 Analysis:</h3>
+<p>This visualization highlights how institutional support relates to GPA outcomes. Higher levels of perceived university support correspond to a greater share of students achieving Good and Excellent GPAs. Conversely, lower support levels are associated with more Fair and Average outcomes, indicating that institutional resources and services contribute meaningfully to academic success.</p>
+</section>
+<section id="visualization-plot8-gpa-distributions-across-learning-factors" class="level3">
+<h3 class="anchored" data-anchor-id="visualization-plot8-gpa-distributions-across-learning-factors">1.7.8 Visualization Plot8: GPA Distributions Across Learning Factors</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>raw <span class="sc">%&gt;%</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(gpa,</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>         study_methods,</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>         quality_lecturer,</span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>         support_of_lec) <span class="sc">%&gt;%</span></span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="sc">-</span>gpa,</span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"factor"</span>,</span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"level"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(gpa), <span class="sc">!</span><span class="fu">is.na</span>(level)) <span class="sc">%&gt;%</span></span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(</span>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="fu">as.numeric</span>(gpa),</span>
+<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="fu">interaction</span>(factor, level),</span>
+<span id="cb37-13"><a href="#cb37-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="fu">factor</span>(<span class="fu">stat</span>(quantile))</span>
+<span id="cb37-14"><a href="#cb37-14" aria-hidden="true" tabindex="-1"></a>  )) <span class="sc">+</span></span>
+<span id="cb37-15"><a href="#cb37-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density_ridges_gradient</span>(</span>
+<span id="cb37-16"><a href="#cb37-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">calc_ecdf =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb37-17"><a href="#cb37-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">quantiles =</span> <span class="dv">4</span>,</span>
+<span id="cb37-18"><a href="#cb37-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">scale =</span> <span class="fl">1.1</span>,</span>
+<span id="cb37-19"><a href="#cb37-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">rel_min_height =</span> <span class="fl">0.01</span></span>
+<span id="cb37-20"><a href="#cb37-20" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb37-21"><a href="#cb37-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_d</span>(<span class="at">name =</span> <span class="st">"Quartile"</span>) <span class="sc">+</span></span>
+<span id="cb37-22"><a href="#cb37-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb37-23"><a href="#cb37-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"GPA Distributions Across Learning Factors"</span>,</span>
+<span id="cb37-24"><a href="#cb37-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"GPA (ordinal score)"</span>,</span>
+<span id="cb37-25"><a href="#cb37-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Factor × Level"</span></span>
+<span id="cb37-26"><a href="#cb37-26" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb37-27"><a href="#cb37-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Take-home_Ex1_files/figure-html/unnamed-chunk-31-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="visualization-plot8-analysis" class="level4">
+<h4 class="anchored" data-anchor-id="visualization-plot8-analysis">1.7.8.1 Visualization Plot8 Analysis:</h4>
+<p>This ridgeline plot illustrates how GPA distributions vary across levels of key learning factors, including study methods, lecturer quality, and lecturer support. Across all three factors, higher influence levels (Quite and Very) show GPA distributions that are visibly shifted toward higher ordinal scores, with greater density in the Good and Excellent categories. In contrast, lower influence levels (Not at all and Little) display distributions concentrated at lower GPA scores, particularly around Fair. The quartile shading further highlights this pattern, as upper quartiles dominate at higher GPA levels when perceived influence increases. These consistent shifts across multiple factors suggest a strong positive association between effective teaching, supportive academic environments, and students’ academic performance. Overall, the visualization indicates that improvements in instructional quality and learning support are likely linked to higher student GPA outcomes.</p>
+</section>
+</section>
+<section id="visualization-plot9-distributions-of-gpa-by-friends-influence" class="level3">
+<h3 class="anchored" data-anchor-id="visualization-plot9-distributions-of-gpa-by-friends-influence">1.7.9.1 Visualization Plot9: Distributions of GPA by Friends’ Influence</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(raw, <span class="fu">aes</span>(<span class="at">x =</span> infuence_f_friends, <span class="at">fill =</span> gpa)) <span class="sc">+</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>percent) <span class="sc">+</span></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Distribution of GPA by Friends’ Influence"</span>,</span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Friends’ influence on learning outcomes"</span>,</span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Proportion of students"</span>,</span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"GPA category"</span></span>
+<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Take-home_Ex1_files/figure-html/unnamed-chunk-32-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(raw)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "year"                "gender"              "policy_stu"         
+ [4] "minority_stu"        "poor_stu"            "father_edu"         
+ [7] "mother_edu"          "father_occupation"   "mother_occupation"  
+[10] "time_friends"        "time_socical_media"  "time_studying"      
+[13] "gpa"                 "adapt_learning_uni"  "study_methods"      
+[16] "support_of_uni"      "support_of_lec"      "facilitie_uni"      
+[19] "quality_lecturer"    "training_curriculum" "competitive_class"  
+[22] "infuence_f_friends" </code></pre>
+</div>
+</div>
+<section id="visualization-plot9-analysis" class="level4">
+<h4 class="anchored" data-anchor-id="visualization-plot9-analysis">1.7.9.1 Visualization Plot9 Analysis:</h4>
+<p><br>
+This stacked proportion bar chart illustrates how GPA outcomes vary across levels of friends’ influence on learning. Across all influence levels, the Fair GPA category accounts for the largest proportion of students, indicating that moderate academic performance is common regardless of peer influence. However, as friends’ influence increases from Not at all to Very, there is a noticeable rise in the proportion of students achieving Good and Excellent GPAs, while the share of Poor and Average outcomes remains relatively small. This pattern suggests a positive association between stronger peer influence and higher academic achievement. Students who perceive their friends as more influential in learning contexts may benefit from peer support, motivation, or collaborative study behaviors. Overall, the visualization indicates that friends’ influence is linked to improved GPA distribution, though the effect appears gradual rather than dramatic.</p>
+</section>
+</section>
+<section id="visualization-plot10-distributions-of-gpa-by-level-of-competing-class" class="level3">
+<h3 class="anchored" data-anchor-id="visualization-plot10-distributions-of-gpa-by-level-of-competing-class">1.7.10 Visualization Plot10: Distributions of GPA by Level of Competing Class</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(raw, <span class="fu">aes</span>(<span class="at">x =</span> competitive_class, <span class="at">fill =</span> gpa)) <span class="sc">+</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>percent) <span class="sc">+</span></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Distribution of GPA by Level of Competing Class"</span>,</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Level of competing class affecting students"</span>,</span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Proportion of students"</span>,</span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"GPA category"</span></span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Take-home_Ex1_files/figure-html/unnamed-chunk-34-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="visualization-plot10-analysis" class="level4">
+<h4 class="anchored" data-anchor-id="visualization-plot10-analysis">1.7.10.1 Visualization Plot10 Analysis:</h4>
+<p>This stacked proportion bar chart illustrates how GPA outcomes vary with students’ perceptions of class competitiveness. Across all competition levels, the Fair GPA category consistently represents the largest share of students, indicating that moderate academic performance is common regardless of competitive intensity. As the perceived level of competition increases from Not at all to Very, there is a noticeable rise in the proportion of students achieving Good and Excellent GPAs. Conversely, lower GPA categories (Poor and Average) remain relatively small and show no substantial increase at higher competition levels. This pattern suggests that a more competitive classroom environment may encourage higher academic achievement without significantly disadvantaging lower-performing students. Overall, the visualization indicates a modest positive association between class competitiveness and GPA, highlighting competition as a potential motivational factor in academic performance.<br>
+</p>
+</section>
+</section>
+</section>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary"><strong>1.8 Summary:</strong></h2>
+<p>This assignment examined factors affecting student learning outcomes using descriptive visualizations. GPA distributions showed that most students achieved Fair or Good performance, with limited extreme outcomes. Analyses across learning factors indicated that effective study methods, high-quality lecturers, institutional support, peer influence, and class competitiveness were positively associated with higher GPA categories. Overall, the findings suggest that both individual learning behaviors and supportive academic environments contribute meaningfully to student academic performance.</p>
+</section>
+<section id="reference" class="level2">
+<h2 class="anchored" data-anchor-id="reference">Reference:</h2>
+<ul>
+<li><a href="https://jtr13.github.io/cc20/data-preprocessing-and-feature-engineering-in-r.html" class="uri">https://jtr13.github.io/cc20/data-preprocessing-and-feature-engineering-in-r.html</a></li>
+<li><a href="https://www.r-bloggers.com/2025/04/mastering-data-preprocessing-in-r-with-the-recipes-package/" class="uri">https://www.r-bloggers.com/2025/04/mastering-data-preprocessing-in-r-with-the-recipes-package/</a></li>
+<li><a href="https://r-graph-gallery.com/ggplot2-package.html" class="uri">https://r-graph-gallery.com/ggplot2-package.html</a></li>
+</ul>
 
 
 </section>
