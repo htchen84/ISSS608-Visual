@@ -1,0 +1,84 @@
+---
+title: "Take-home_Ex1"
+author: "CHEN HO TUNG"
+date: "January 10, 2026"
+date-modified: "last-modified"
+
+format:
+  html:
+    toc-depth: 4
+    toc-expand: true
+
+execute: 
+  eval: true
+  echo: true
+  warning: false
+  freeze: true
+---
+
+# Overview
+
+## Import Package
+
+```{r}
+pacman::p_load(ggstatsplot, tidyverse,ggrepel, patchwork, janitor,colorspaces,ggstatsplot,ggdist,ggridges,FunnelPlotR,knitr,gganimate,gifski,gapminder,
+               ggthemes, hrbrthemes,
+               tidyverse,readxl)
+```
+
+## Import Data
+
+```{r}
+df_raw <- read_excel("data/Database paper.xlsx") %>%
+  janitor::clean_names()
+df_raw
+```
+
+```{r}
+
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```

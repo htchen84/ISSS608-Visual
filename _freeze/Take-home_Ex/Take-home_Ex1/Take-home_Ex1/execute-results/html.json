@@ -1,0 +1,15 @@
+{
+  "hash": "22d06232d0a3b527523b966c7d0355e4",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Take-home_Ex1\"\nauthor: \"CHEN HO TUNG\"\ndate: \"January 10, 2026\"\ndate-modified: \"last-modified\"\n\nformat:\n  html:\n    toc-depth: 4\n    toc-expand: true\n\nexecute: \n  eval: true\n  echo: true\n  warning: false\n  freeze: true\n---\n\n# Overview\n\n## Import Package\n\n\n::: {.cell}\n\n```{.r .cell-code}\npacman::p_load(ggstatsplot, tidyverse,ggrepel, patchwork, janitor,colorspaces,ggstatsplot,ggdist,ggridges,FunnelPlotR,knitr,gganimate,gifski,gapminder,\n               ggthemes, hrbrthemes,\n               tidyverse,readxl)\n```\n:::\n\n\n## Import Data\n\n\n::: {.cell}\n\n```{.r .cell-code}\ndf_raw <- read_excel(\"data/Database paper.xlsx\") %>%\n  janitor::clean_names()\ndf_raw\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n# A tibble: 2,170 × 22\n    year gender policy_stu minority_stu poor_stu father_edu mother_edu\n   <dbl>  <dbl>      <dbl>        <dbl>    <dbl>      <dbl>      <dbl>\n 1     5      2          2            2        2          4          4\n 2     5      1          2            2        2          3          3\n 3     5      2          2            2        2          4          4\n 4     5      2          2            2        2          5          4\n 5     5      1          1            2        2          2          3\n 6     5      2          2            2        2          5          5\n 7     5      2          2            2        2          6          5\n 8     5      2          2            2        2          5          4\n 9     5      2          2            2        2          5          5\n10     5      2          2            2        2          5          4\n# ℹ 2,160 more rows\n# ℹ 15 more variables: father_occupation <dbl>, mother_occupation <dbl>,\n#   time_friends <dbl>, time_socical_media <dbl>, time_studying <dbl>,\n#   gpa <dbl>, adapt_learning_uni <dbl>, study_methods <dbl>,\n#   support_of_uni <dbl>, support_of_lec <dbl>, facilitie_uni <dbl>,\n#   quality_lecturer <dbl>, training_curriculum <dbl>, competitive_class <dbl>,\n#   infuence_f_friends <dbl>\n```\n\n\n:::\n:::\n\n\n\n::: {.cell}\n\n:::\n\n\n\n::: {.cell}\n\n:::\n\n\n\n::: {.cell}\n\n:::\n\n\n\n::: {.cell}\n\n:::\n\n\n\n::: {.cell}\n\n:::\n\n\n\n::: {.cell}\n\n:::\n\n\n\n::: {.cell}\n\n:::\n\n\n\n::: {.cell}\n\n:::\n\n\n\n::: {.cell}\n\n:::\n\n\n\n::: {.cell}\n\n:::\n\n\n\n::: {.cell}\n\n:::\n\n\n\n::: {.cell}\n\n:::\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
