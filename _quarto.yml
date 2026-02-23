@@ -35,6 +35,9 @@ website:
         href: "Hands-on_Ex/Hands-on_Ex5/Hands-on_Exercise5_part4.html"
       - text: "Hands-on_Exercise5_part5"
         href: "Hands-on_Ex/Hands-on_Ex5/Hands-on_Exercise5_part5.html"
+      - text: "Hands-on_Exercise6_together_in_hands-on_ex7"
+      - text: "Hands-on_Exercise7"
+        href: "Hands-on_Ex/Hands-on_Ex7/Hands-on_Exercise7.html"
     - text: "In-class Exercise"
     - text: "Take-home_exercise"
       menu:
