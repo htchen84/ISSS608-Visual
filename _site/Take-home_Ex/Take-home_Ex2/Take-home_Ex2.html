@@ -779,14 +779,14 @@ Root node error: 19976/30460 = 0.65581
 n= 30460 
 
         CP nsplit rel error   xerror      xstd
-1 0.620166      0  1.000000 1.000054 0.0605157
-2 0.128696      1  0.379834 0.383037 0.0222055
-3 0.128051      2  0.251138 0.270576 0.0187268
-4 0.031386      3  0.123087 0.124351 0.0078585
-5 0.024116      4  0.091701 0.092944 0.0027443
-6 0.021592      5  0.067585 0.064361 0.0026783
-7 0.016084      6  0.045993 0.046744 0.0024857
-8 0.010000      7  0.029909 0.030666 0.0017880</code></pre>
+1 0.620166      0  1.000000 1.000051 0.0605168
+2 0.128696      1  0.379834 0.383000 0.0221174
+3 0.128051      2  0.251138 0.273401 0.0194467
+4 0.031386      3  0.123087 0.124739 0.0078870
+5 0.024116      4  0.091701 0.101093 0.0056137
+6 0.021592      5  0.067585 0.059747 0.0026479
+7 0.016084      6  0.045993 0.046167 0.0024878
+8 0.010000      7  0.029909 0.031043 0.0018477</code></pre>
 </div>
 </div>
 </section>
@@ -924,6 +924,13 @@ to examine the distribution of prediction errors and identify any systematic bia
 <span id="cb35-32"><a href="#cb35-32" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb35-33"><a href="#cb35-33" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb35-34"><a href="#cb35-34" aria-hidden="true" tabindex="-1"></a>p</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Take-home_Ex2_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
 </div>
 <p><strong>Interpretation</strong></p>
 <p>Chart(Left): The predicted versus actual scatterplot shows a strong linear relationship between predicted and observed customer lifetime values. Most points lie close to the diagonal trend, indicating that the Random Forest model is able to generate predictions that closely match the actual values. The model achieves an R² value of approximately 0.97, suggesting that it explains about 97% of the variance in customer lifetime value. This indicates strong predictive performance and suggests that the selected behavioural and transactional variables provide substantial information for estimating customer value.</p>

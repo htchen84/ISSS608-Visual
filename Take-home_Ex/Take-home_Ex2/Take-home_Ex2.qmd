@@ -65,7 +65,7 @@ We load the following R packages using the `pacman::p_load()` function:
 #### Import Package
 
 ```{r}
-pacman::p_load(dplyr, ggstatsplot, tidyverse,ggrepel, patchwork, janitor,colorspace,ggstatsplot,ggdist,ggridges,FunnelPlotR,knitr,gganimate,gifski,gapminder,ggthemes, hrbrthemes,tidyverse,readxl, rpart, visNetwork, visTree,rpart.plot, htmlwidgets, caret,ranger,patchwork,Metrics)
+pacman::p_load(dplyr, ggstatsplot, tidyverse,ggrepel, patchwork, janitor,colorspace,ggstatsplot,ggdist,ggridges,FunnelPlotR,knitr,gganimate,gifski,gapminder,ggthemes, hrbrthemes,tidyverse,readxl, rpart, visNetwork, visTree,rpart.plot, htmlwidgets, caret,ranger,patchwork,Metrics, reshape2)
 ```
 
 ## 2.5 Load Data
@@ -194,13 +194,39 @@ df_analysis <- na.omit(df_analysis)
 head(df_analysis, 20)
 ```
 
+```{r}
+ggplot(df_analysis, aes(x = customer_lifetime_value)) +
+  geom_histogram(bins=40, fill="steelblue", color="white") +
+  labs(title="Distribution of Customer Lifetime Value",
+       x="Customer Lifetime Value",
+       y="Frequency")
+```
+
+```{r}
+cor_matrix <- cor(df_analysis)
+
+melt(cor_matrix) %>%
+  ggplot(aes(Var1, Var2, fill=value)) +
+  geom_tile() +
+  scale_fill_gradient2(low="blue", mid="white", high="purple") +
+  theme(axis.text.x = element_text(angle=90)) +
+  labs(title="Correlation Heatmap")
+```
+
+Above heatmap, contrast to linear regression models, decision tree algorithms are generally robust to multicollinearity among predictor variables. Since decision trees perform recursive data partitioning rather than estimating regression coefficients, highly correlated variables do not significantly distort model estimation. The features remain the same.
+
 ## 2.7 Decision Tree Analysis
 
 ### 2.7.1 Basic Decision Tree Model
 
 ```{r}
+df_analysis <- df_analysis %>%
+  mutate(clv_billion = customer_lifetime_value / 1e9)
+```
+
+```{r}
 anova.model <- function(min_split, complexity_parameter, max_depth) {
-  rpart(customer_lifetime_value ~ ., 
+  rpart(clv_billion ~ ., 
         data = df_analysis, 
         method = "anova", 
         control = rpart.control(minsplit = min_split, 
@@ -219,7 +245,15 @@ visTree(fit_tree)
 Fit the regression tree model.
 
 ```{r}
-rpart.plot(fit_tree)
+rpart.plot(fit_tree,
+           type = 2,
+           extra = 101,
+           box.palette = "Blues",
+           fallen.leaves = TRUE)
+
+title("Pruned Decision Tree for Customer Lifetime Value (Billions COP)",
+      line = 3,
+      cex.main = 1.3)
 ```
 
 ### **2.7.3** Tuning of Hyperparameters
@@ -245,7 +279,15 @@ visTree(pruned_tree)
 ```
 
 ```{r}
-rpart.plot(pruned_tree)
+rpart.plot(pruned_tree,
+           type = 2,
+           extra = 101,
+           box.palette = "Blues",
+           fallen.leaves = TRUE)
+
+title("Pruned Decision Tree for Customer Lifetime Value (Billions COP)",
+      line = 3,
+      cex.main = 1.3)
 ```
 
 **Analysis:**
@@ -311,7 +353,6 @@ The trained model is then applied to the test data to generate predicted custome
 
 ```{r}
 #| eval: false
-#| include: false
 df_test$fit_forest <- predict(rf_model, df_test)
 
 rf_scatter <- ggplot() +
@@ -370,7 +411,6 @@ The variable importance chart identifies the most influential predictors of cust
 
 ```{r}
 #| eval: false
-#| include: false
 tree_range <- 5:150
 
 rsquared_trees <- c()
@@ -410,7 +450,6 @@ The R² versus number of trees plot illustrates how the predictive performance o
 
 ```{r}
 #| eval: false
-#| include: false
 var_imp <- varImp(rf_model_temp)
 
 plot(var_imp, top = 10, main = "Top 10 Important Variables for CLV Prediction")
