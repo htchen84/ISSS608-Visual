@@ -286,7 +286,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#visualising-variable-importance-top-20" id="toc-visualising-variable-importance-top-20" class="nav-link" data-scroll-target="#visualising-variable-importance-top-20">2.8.4 Visualising Variable Importance (top 20)</a></li>
   <li><a href="#interpretation-1" id="toc-interpretation-1" class="nav-link" data-scroll-target="#interpretation-1">Interpretation</a></li>
   <li><a href="#visualizing-of-r-squred-value-vs.-the-number-of-trees" id="toc-visualizing-of-r-squred-value-vs.-the-number-of-trees" class="nav-link" data-scroll-target="#visualizing-of-r-squred-value-vs.-the-number-of-trees"><strong>2.8.5 Visualizing of R-Squred Value vs.&nbsp;The Number of Trees</strong></a></li>
-  <li><a href="#reference" id="toc-reference" class="nav-link" data-scroll-target="#reference">Reference</a></li>
+  <li><a href="#ui-design" id="toc-ui-design" class="nav-link" data-scroll-target="#ui-design">2.9 UI Design</a></li>
+  <li><a href="#reference" id="toc-reference" class="nav-link" data-scroll-target="#reference">2.10 Reference</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -766,14 +767,14 @@ Root node error: 1.9976e+22/30460 = 6.5581e+17
 
 n= 30460 
 
-        CP nsplit rel error  xerror      xstd
-1 0.577274      0  1.000000 1.00002 0.0605143
-2 0.109394      1  0.422726 0.42577 0.0260097
-3 0.081405      2  0.313332 0.31365 0.0257684
-4 0.026764      4  0.150522 0.16974 0.0136067
-5 0.020135      5  0.123758 0.13383 0.0096315
-6 0.019222      6  0.103623 0.12450 0.0096145
-7 0.010000      7  0.084401 0.10058 0.0095727</code></pre>
+        CP nsplit rel error   xerror      xstd
+1 0.577274      0  1.000000 1.000055 0.0605154
+2 0.109394      1  0.422726 0.426171 0.0260028
+3 0.081405      2  0.313332 0.314522 0.0257637
+4 0.026764      4  0.150522 0.165255 0.0133998
+5 0.020135      5  0.123758 0.132063 0.0089064
+6 0.019222      6  0.103623 0.118093 0.0088677
+7 0.010000      7  0.084401 0.096747 0.0088390</code></pre>
 </div>
 </div>
 </section>
@@ -1003,8 +1004,12 @@ resolved_tickets_ratio      0.0000</code></pre>
 <p><strong>Interpretation</strong></p>
 <p>The variable importance plot indicates that transaction-related variables are the most influential predictors of Customer Lifetime Value (CLV) in the random forest model. In particular, total_tx_volume is the most important feature, suggesting that customers who generate higher overall transaction amounts tend to contribute significantly more lifetime value to the fintech platform. This is followed by tx_count and avg_tx_value, indicating that both the frequency and average size of transactions play a key role in determining customer value. Other variables such as average_transaction_value, credit_utilization_ratio, and monthly_transaction_count have moderate influence, reflecting the impact of customer spending behavior and financial activity. In contrast, variables such as churn_probability, weekend_transaction_ratio, avg_daily_transactions, and nps_score contribute relatively less to the prediction. Overall, the results suggest that customers who transact more frequently and generate higher transaction volumes tend to have greater lifetime value, highlighting the importance of transaction behavior in driving long-term customer profitability.</p>
 </section>
+<section id="ui-design" class="level2">
+<h2 class="anchored" data-anchor-id="ui-design">2.9 UI Design</h2>
+<p><img src="images/clipboard-1065077413.png" class="img-fluid"></p>
+</section>
 <section id="reference" class="level2">
-<h2 class="anchored" data-anchor-id="reference">Reference</h2>
+<h2 class="anchored" data-anchor-id="reference">2.10 Reference</h2>
 <ol type="1">
 <li><a href="https://ggplot2.tidyverse.org/" class="uri">https://ggplot2.tidyverse.org/</a></li>
 <li><a href="https://cran.r-project.org/web/packages/ggparty/vignettes/ggparty-graphic-partying.html" class="uri">https://cran.r-project.org/web/packages/ggparty/vignettes/ggparty-graphic-partying.html</a></li>

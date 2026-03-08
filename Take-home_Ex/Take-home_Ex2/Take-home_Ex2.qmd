@@ -441,7 +441,11 @@ plot(var_imp, top = 10, main = "Top 10 Important Variables for CLV Prediction")
 
 The variable importance plot indicates that transaction-related variables are the most influential predictors of Customer Lifetime Value (CLV) in the random forest model. In particular, total_tx_volume is the most important feature, suggesting that customers who generate higher overall transaction amounts tend to contribute significantly more lifetime value to the fintech platform. This is followed by tx_count and avg_tx_value, indicating that both the frequency and average size of transactions play a key role in determining customer value. Other variables such as average_transaction_value, credit_utilization_ratio, and monthly_transaction_count have moderate influence, reflecting the impact of customer spending behavior and financial activity. In contrast, variables such as churn_probability, weekend_transaction_ratio, avg_daily_transactions, and nps_score contribute relatively less to the prediction. Overall, the results suggest that customers who transact more frequently and generate higher transaction volumes tend to have greater lifetime value, highlighting the importance of transaction behavior in driving long-term customer profitability.
 
-## Reference
+## 2.9 UI Design
+
+![](images/clipboard-1065077413.png)
+
+## 2.10 Reference
 
 1.  <https://ggplot2.tidyverse.org/>
 2.  <https://cran.r-project.org/web/packages/ggparty/vignettes/ggparty-graphic-partying.html>
