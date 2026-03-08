@@ -220,20 +220,15 @@ Above heatmap, contrast to linear regression models, decision tree algorithms ar
 ### 2.7.1 Basic Decision Tree Model
 
 ```{r}
-df_analysis <- df_analysis %>%
-  mutate(clv_billion = customer_lifetime_value / 1e9)
-```
-
-```{r}
 anova.model <- function(min_split, complexity_parameter, max_depth) {
-  rpart(clv_billion ~ ., 
+  rpart(customer_lifetime_value ~ ., 
         data = df_analysis, 
         method = "anova", 
         control = rpart.control(minsplit = min_split, 
                                 cp = complexity_parameter, 
                                 maxdepth = max_depth))}
 
-fit_tree <- anova.model(50, 0.01, 4)
+fit_tree <- anova.model(50, 0.01, 4) 
 ```
 
 ### **2.7.2 Visualising the Decision Tree Model**
@@ -245,15 +240,7 @@ visTree(fit_tree)
 Fit the regression tree model.
 
 ```{r}
-rpart.plot(fit_tree,
-           type = 2,
-           extra = 101,
-           box.palette = "Blues",
-           fallen.leaves = TRUE)
-
-title("Pruned Decision Tree for Customer Lifetime Value (Billions COP)",
-      line = 3,
-      cex.main = 1.3)
+rpart.plot(fit_tree)
 ```
 
 ### **2.7.3** Tuning of Hyperparameters
@@ -279,15 +266,7 @@ visTree(pruned_tree)
 ```
 
 ```{r}
-rpart.plot(pruned_tree,
-           type = 2,
-           extra = 101,
-           box.palette = "Blues",
-           fallen.leaves = TRUE)
-
-title("Pruned Decision Tree for Customer Lifetime Value (Billions COP)",
-      line = 3,
-      cex.main = 1.3)
+rpart.plot(pruned_tree)
 ```
 
 **Analysis:**
@@ -352,7 +331,6 @@ The trained model is then applied to the test data to generate predicted custome
     to examine the distribution of prediction errors and identify any systematic bias.
 
 ```{r}
-#| eval: false
 df_test$fit_forest <- predict(rf_model, df_test)
 
 rf_scatter <- ggplot() +
@@ -444,6 +422,8 @@ ggplot(df = rsquared_plot) +
        title = "R-squared vs. Number of Trees Plot")
 ```
 
+![](images/clipboard-1252065764.png)
+
 **Interpretation**
 
 The R² versus number of trees plot illustrates how the predictive performance of the Random Forest model evolves as additional trees are added to the ensemble. Initially, when the forest contains only a small number of trees, the R² value is relatively low due to model instability and limited representation of the underlying data structure. As the number of trees increases, model performance improves rapidly and stabilises after approximately 50 trees. Beyond this point, the R² value fluctuates slightly around 0.96–0.97, indicating that further increases in tree count yield minimal improvement. This suggests that a moderate number of trees is sufficient to achieve strong predictive performance while maintaining computational efficiency.
@@ -454,6 +434,8 @@ var_imp <- varImp(rf_model_temp)
 
 plot(var_imp, top = 10, main = "Top 10 Important Variables for CLV Prediction")
 ```
+
+![](images/clipboard-683851910.png)
 
 **Interpretation**
 
